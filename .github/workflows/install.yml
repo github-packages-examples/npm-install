@@ -15,7 +15,13 @@ jobs:
       - name: Create a package called @${{ github.repository }}
         run: npm init --scope ${{ github.repository_owner }} -y
 
+      - name: Add index.js to package
+        run: echo 'require("@${{ github.repository_owner }}/npm-publish").sayHello()' > index.js
+
       - name: Install a package
         run: npm install @${{ github.repository_owner }}/npm-publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.READ_PACKAGES_TOKEN }}
+
+      - name: Execute package
+        run: npx .
