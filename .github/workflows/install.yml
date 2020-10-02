@@ -12,8 +12,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        env:
-          GITHUB_TOKEN: ${{ secrets.READ_PACKAGES_TOKEN }}
 
       - name: Execute package
         run: npx .
