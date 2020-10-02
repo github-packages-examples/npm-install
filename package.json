@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/github-packages-examples/npm-install/issues"
   },
-  "homepage": "https://github.com/github-packages-examples/npm-install#readme"
+  "homepage": "https://github.com/github-packages-examples/npm-install#readme",
+  "dependencies": {
+    "@github-packages-examples/npm-publish": "^1.0.15"
+  }
 }

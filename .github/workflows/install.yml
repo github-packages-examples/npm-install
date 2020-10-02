@@ -10,11 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install a package
-        run: npm install ${{ env.TARGET_PACKAGE }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.READ_PACKAGES_TOKEN }}
-
       - name: Execute package
         run: npx .
 
