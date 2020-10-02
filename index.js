@@ -1,1 +1,1 @@
-require("${{ env.TARGET_PACKAGE }}").sayHello()
+require("@github-packages-examples/npm-publish").sayHello()
