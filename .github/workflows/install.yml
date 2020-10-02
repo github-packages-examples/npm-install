@@ -4,12 +4,22 @@ env:
   TARGET_PACKAGE: "@${{ github.repository_owner }}/npm-publish"
 
 jobs:
-  install:
+  checkout-and-install:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
 
+      - name: Install dependencies
+        run: npm install
+
+      - name: Execute package
+        run: npx .
+
+  create-and-install:
+    runs-on: ubuntu-latest
+
+    steps:
       - uses: actions/setup-node@v1
         with:
           scope: ${{ github.repository_owner }}
